@@ -5,7 +5,7 @@
 import { createServer } from 'http';
 import handler from './routes';
 
-const PORT = +process.env.PORT || 8000; // Required port for HackerRank
+const PORT = +process.env.PORT || 8000;
 
 const server = createServer(handler)
   .on('listening', () => {
