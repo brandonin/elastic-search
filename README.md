@@ -21,4 +21,6 @@ curl -XGET https://search-signafireapi-3yocmsnbm4j4wp3z72fx7ifwbi.us-east-2.es.a
 
 Example CURL command for POST:
 
-curl -XPOST https://search-signafireapi-3yocmsnbm4j4wp3z72fx7ifwbi.us-east-2.es.amazonaws.com/foo_index/docs/1 -d '{"first_name": "fred"}' -H'Content-Type: application/json'
+curl -XPOST https://search-signafireapi-3yocmsnbm4j4wp3z72fx7ifwbi.us-east-2.es.amazonaws.com/foo_index/docs/1 -d '{"first_name": "fred", "last_name": "flintstone", "location":"bedrock"}' -H'Content-Type: application/json'
+
+curl -XPOST https://search-signafireapi-3yocmsnbm4j4wp3z72fx7ifwbi.us-east-2.es.amazonaws.com/foo_index/docs/2 -d '{"first_name": "fred", "last_name": "rogers", "location":"land of make-believe"}' -H'Content-Type: application/json'
