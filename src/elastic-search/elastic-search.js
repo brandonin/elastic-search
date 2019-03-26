@@ -1,4 +1,4 @@
-import Elasticsearch from 'elasticsearch';
+import elasticsearch from 'elasticsearch';
 const host = "https://search-signafireapi-3yocmsnbm4j4wp3z72fx7ifwbi.us-east-2.es.amazonaws.com/";
 
 
@@ -13,19 +13,30 @@ const Elasticsearch = new elasticsearch.Client({
 //     location: null,     // location: String
 // }
 
-const create = (index, type, body) => {
+const create = async (index, type, first_name, last_name, location) => {
     let id = 1;
 
-    Elasticsearch.create({
+    console.log('elastic', Elasticsearch)
+    await Elasticsearch.create({
         index,
         type,
         id,
-        body,
+        body: {
+            first_name,
+            last_name,
+            location,
+        },
     }, (e, r) => {
         console.log(`Inserted into Elasticsearch ${index} with id`, r._id);
     });
 }
 
-export default {
-    create
+const search = async (value) => {
+    const result = await Elasticsearch.search({ q: value });
+    return results;
+}
+
+export {
+    create,
+    search
 }
