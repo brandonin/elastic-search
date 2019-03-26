@@ -1,3 +1,5 @@
+This project is to architect and properly implement an Elastic Search solution.
+
 To install dependencies
 
     npm install
