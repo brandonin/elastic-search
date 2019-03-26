@@ -7,6 +7,6 @@ export function register(app) {
     app.use('/elastic-search', router);
 }
 
-router.post('/', validate('main'), (req, res) => {
+router.post('/', (req, res) => {
     throw new Error(501);
 });

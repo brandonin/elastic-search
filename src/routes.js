@@ -1,7 +1,7 @@
 import express from 'express';
 import { json as parseJsonBody, urlencoded } from 'body-parser';
 
-import { register as registerElasticSearch } from './measurements/elastic-search-routes';
+import { register as registerElasticSearch } from './elastic-search/elastic-search-routes';
 
 const server = express();
 
