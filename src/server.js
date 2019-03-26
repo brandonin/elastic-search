@@ -1,10 +1,9 @@
 import { GraphQLServer } from 'graphql-yoga';
 import { prisma } from './generated/prisma-client';
+import Query from './resolvers/Query';
 
 const resolvers = {
-  Query: {
-    info: () => `This is the API of an elastic-search project for Signafire`
-  }
+  Query,
 }
 
 const server = new GraphQLServer({
