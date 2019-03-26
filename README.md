@@ -13,3 +13,12 @@ If you would like to add additional dependencies, simply run
 To run the test suite
 
     npm test
+
+
+Example CURL command for GET:
+
+curl -XGET https://search-signafireapi-3yocmsnbm4j4wp3z72fx7ifwbi.us-east-2.es.amazonaws.com/foo_index/_search/?q="first_name:fred"
+
+Example CURL command for POST:
+
+curl -XPOST https://search-signafireapi-3yocmsnbm4j4wp3z72fx7ifwbi.us-east-2.es.amazonaws.com/foo_index/docs/1 -d '{"first_name": "fred"}' -H'Content-Type: application/json'
