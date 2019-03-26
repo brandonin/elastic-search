@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "elastic-search": {
+      "schemaPath": "schema.graphql"
+    },
+    "prisma": {
+      "schemaPath": "src/generated/prisma.graphql",
+      "extensions": {
+        "prisma": "database/prisma.yml"
+      }
+    }
+  }
+}

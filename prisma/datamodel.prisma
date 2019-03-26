@@ -1,0 +1,9 @@
+type Authorization {
+    id: ID! @unique
+    user: User!
+}
+
+type User {
+    id: ID! @unique
+    name: String!
+}
