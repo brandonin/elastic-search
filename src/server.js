@@ -1,17 +1,20 @@
-/***************************
- * DO NOT CHANGE THIS FILE *
- ***************************/
+import { GraphQLServer } from 'graphql-yoga';
+import { prisma } from './generated/prisma-client';
 
-import { createServer } from 'http';
-import handler from './routes';
+const resolvers = {
+  Query: {
+    info: () => `This is the API of an elastic-search project for Signafire`
+  }
+}
 
-const PORT = +process.env.PORT || 8000;
-
-const server = createServer(handler)
-  .on('listening', () => {
-    const { port } = server.address();
-    console.log(`Server listening on port ${port}`);
-  })
-  .on('close', () => console.log('Server closed.'));
-
-server.listen(PORT);
+const server = new GraphQLServer({
+  typeDefs: './src/schema.graphql',
+  resolvers,
+  context: request => {
+    return {
+      ...request,
+      prisma
+    }
+  }
+})
+server.start(() => console.log(`Server is running on http://localhost:4000`))

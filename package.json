@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "babel-watch src/server.js",
-    "test": "cross-env NODE_NO_WARNINGS=1 take-home-integration-test features --check-new --command 'npm start' --port 8000 --out-file integration-test.log -- --tags 'not @skip'"
+    "start": "babel-watch src/server.js"
   },
   "engines": {
     "node": ">=8.0"
